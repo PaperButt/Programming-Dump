@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Programming Dump - 001 - HTML</title>
+  <link rel="stylesheet" href="css/root.css">
+  <link rel="stylesheet" href="css/general.css">
+  <script src="javascript/jquery-3.2.1.min.js" charset="utf-8"></script>
+  <script src="javascript/javascript.js" charset="utf-8"></script>
+</head>
+
+<body onload="onload()">
+
+  <!-- Overlay -->
+  <div class="really_fixed">
+    <div id="overlay">
+
+      <!-- Notification Area -->
+      <div id="notification_area">
+        <div id="notification_arrow">
+          <a href="#" onclick="hide_notifications()">></a>
+          <p>0</p>
+        </div>
+        <div class="notification_toast" onload="notification_timeout(this)">
+          <!-- <div class="left_side"> -->
+            <div class="notification_title">
+              <p>Hey this is a Notification</p>
+            </div>
+            <div class="notification_message">
+              <p>This is where notifications should appear.<wbr> Click on the left to hide this tab</p>
+            </div>
+          <!-- </div> -->
+          <a class="notification_dismiss" href="#" onclick="notification_dismiss(this);">
+            <p>Dissmiss</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- D U M P -->
+      <p class="dump_text">
+        This is Programming Dump<br> HTML - 001<br> This programming dump was used to study a notification system<br>
+        <a href="paperbutt.github.io" target="_blank">paperbutt.github.io</a>
+      </p>
+
+    </div>
+  </div>
+
+  <!-- Button to Spawn a squad of notifications -->
+  <button style="padding: 5px; margin: 15px;" type="button" onclick="spawn_notification()">SPAWN THE NOTIFICATION SQUAD</button>
+
+  <!-- Your custom message and title then click so spawn -->
+  <input id="input_title" type="text" name="" placeholder="Title" value=""></input>
+  <input id="input_message" type="text" name="" placeholder="Message" value=""></input>
+  <button style="padding: 5px; margin: 15px;" type="button" onclick="toast_notification($('#input_title').val(), $('#input_message').val())">SPAWN YOUR NOTIFICATION</button>
+
+  <!-- Templates -->
+  <div hidden id="templates">
+
+    <!-- Notification -->
+    <div id="notification">
+      <div class="notification_toast">
+        <!-- <div class="left_side"> -->
+          <div class="notification_title">
+            <p>Title
+              <p>
+          </div>
+          <div class="notification_message">
+            <p>Message
+              <p>
+          </div>
+        <!-- </div> -->
+        <a class="notification_dismiss" href="#" onclick="notification_dismiss(this);">
+          <p>Dissmiss</p>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

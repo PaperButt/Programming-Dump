@@ -1,0 +1,184 @@
+/* Global Styles */
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: var(--font-text);
+  background: var(--color-background);
+}
+
+.really_fixed {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  pointer-events: none;
+}
+
+.left_side {
+  float: left;
+}
+
+.right_side {
+  float: right;
+}
+
+/* NOTIFICATION AREA PROPERTIES*/
+
+#notification_area {
+  float: right;
+  width: 400px;
+  height: 100%;
+  transform: translateX(0%);
+  transition: transform 0.3s ease;
+  /* background: white; */
+}
+
+#no_notifications{
+  position: relative;
+  transition: all .6s, transform .1s ease-out;
+  right: 0;
+  opacity: .6;
+  width: 85%;
+  height: 20px;
+  background: var(--color-notification-background);
+  border-radius: 10px;
+  padding: 2.5%;
+  margin: 5%;
+  box-shadow: black 0 0 15px;
+}
+
+/* End of Notification area properties */
+
+/* NOTIFICATION ARROW AND INDICATOR PROPERTIES */
+
+#notification_arrow{
+  height: 100%;
+  float: left;
+}
+
+#notification_arrow a{
+  position: relative;
+  width: 100%;
+  font-family: monospace;
+  background: var(--color-notification-background);
+  left: -150%;
+  top: 20px;
+  padding: 10px 2.5px;
+  border-radius: 5px;
+  pointer-events: all;
+  opacity: .3;
+  box-shadow: black 0 0 15px;
+  display: block;
+  text-align: center;
+}
+
+#notification_arrow p{
+  display: block;
+  width: 100%;
+  position: relative;
+  font-family: monospace;
+  background: var(--color-notification-background);
+  left: -150%;
+  top: 40px;
+  padding: 2.5px 2.5px;
+  border-radius: 5px;
+  pointer-events: all;
+  opacity: .3;
+  box-shadow: black 0 0 15px;
+  text-align: center;
+}
+
+#notification_arrow a:hover{
+  opacity: 1;
+}
+
+#notification_arrow a:hover + #notification_arrow p{
+  opacity: 1;
+}
+
+/* END of Notification arrow and indicator properties */
+
+/* NOTIFICATION TOAST PROPERTIES */
+
+.notification_toast {
+  pointer-events: all;
+  position: relative;
+  transition: all .6s, transform .1s ease-out;
+  right: 0;
+  opacity: .9;
+  width: 85%;
+  min-height: 50px;
+  background: var(--color-notification-background);
+  border-radius: 10px;
+  padding: 2.5%;
+  margin: 5%;
+  box-shadow: black 0 0 15px;
+  transform: scale(1);
+}
+
+.notification_toast:hover {
+  box-shadow: black 0 0 5px;
+  transform: scale(1.01);
+}
+
+.notification_title {
+  color: var(--color-notification-text);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.notification_message {
+  color: var(--color-dark-text);
+  font-size: 15px;
+  padding: 5px;
+  width: 250px;
+}
+
+.notification_dismiss {
+  display: block;
+  background: var(--color-dark-text);
+  color: var(--color-notification-background);
+  border-radius: 5px;
+  float: right;
+  text-align: right;
+  position: relative;
+  transform-origin: left;
+  transform: translateY(-100%);
+}
+
+.notification_dismiss p{
+  padding: 5px;
+}
+
+/* End of Toast notification properties */
+
+/* DUMP TEXT PROPERTIES*/
+
+#overlay {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.dump_text {
+  display: block;
+  padding: 2.5%;
+  position: absolute;
+  float: right;
+  text-align: right;
+  bottom: 0px;
+  right: 0px;
+  font-size: 12px;
+}
+
+.dump_text a {
+  color: black;
+}
