@@ -1,14 +1,14 @@
-// Always check for initial number of notifications so user knows even at load
-function onload() {
-  check_notifications();
-}
-
 // To dissmiss a notification we first slide and fade it away and then remove it
 function notification_dismiss(item) {
   var notification = $(item).parent();
-  notification.css("right", "-20%");
+  notification.css("min-height", "0px");
+  notification.css("max-height", "0px");
+  notification.css("padding", "0px auto");
+  notification.css("margin-top", "0px");
+  notification.css("margin-bottom", "0px");
   notification.css("opacity", "0");
   notification.css("pointer-events", "none");
+  notification.css("filter", "blur(5px)");
   $(item).remove();
   setTimeout(function() {
     notification.remove();
@@ -27,18 +27,18 @@ function spawn_notification() {
 Hidding the area is simple we translate it to the side and then change the
 button text
 */
-var notification_area_hidden = false;
+var notification_area_hidden = true;
 
 function hide_notifications() {
   switch (notification_area_hidden) {
     case false:
-      $("#notification_area").css("transform", "translateX(100%)");
-      $("#notification_arrow a").html("<");
+      $("#notifications_hide").css("transform", "translateY(-100%)");
+      $("#inner_menu_content").css("filter", "blur(0px)");
       notification_area_hidden = true;
       break;
     case true:
-      $("#notification_area").css("transform", "translateX(0%)");
-      $("#notification_arrow a").html(">");
+      $("#notifications_hide").css("transform", "translateY(0%)");
+      $("#inner_menu_content").css("filter", "blur(5px)");
       notification_area_hidden = false;
       break;
   }
@@ -56,23 +56,16 @@ notification was supposed to be.
 var notification_number_shown;
 
 function check_notifications() {
-  var notifications = $("#notification_area .notification_toast");
+  var notifications = $("#notifications .notification_toast");
+  console.log(notifications.length);
   if (notifications.length == 0) {
-    $("#notification_area").append("<p id=\"no_notifications\">no notifications</p>");
-    $("#notification_arrow p").remove();
-    $("#clear").remove();
+    $("#notifications").append("<p id=\"no_notifications\">no notifications</p>");
     notification_number_shown = false;
-    $("#notification_arrow p").css("background", "transparent");
   } else {
     $("#no_notifications").remove();
     if (notification_number_shown == false) {
-      $("#notification_arrow").append("<p></p>");
       notification_number_shown = true;
-      $("#notifications").after("<div id=\"clear\"></div>");
     }
-    $("#notification_area #clear").html("<a href=\"#\" id=\"clear_notifications\" onclick=\"clear_all_notifications()\">Clear All Notifications</a>");
-    $("#notification_arrow p").html(notifications.length);
-    $("#notification_arrow p").css("background", "var(--color-notification-background)");
   }
 }
 
@@ -80,8 +73,8 @@ function check_notifications() {
 // Returns a "Toasted" message
 function toast_notification(title, message) {
   var notification = $("#templates #notification .notification_toast").clone();
-  notification.find(".notification_title").html(title);
-  notification.find(".notification_message").html(message);
+  notification.find(".notification_title p").html(title.toUpperCase());
+  notification.find(".notification_message p").html(message);
   $("#notifications").append(notification);
   check_notifications();
   return ("Toasted");
@@ -91,3 +84,7 @@ function toast_notification(title, message) {
 function clear_all_notifications() {
   notification_dismiss($("#notifications .notification_dismiss"));
 }
+
+$("#notification_arrow a.time").mouseenter(function(){
+  console.log("hi");
+});

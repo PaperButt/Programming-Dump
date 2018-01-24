@@ -1,0 +1,130 @@
+/* Global Styles */
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: var(--font-text);
+  background: var(--color-background);
+}
+
+.really_fixed {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  pointer-events: none;
+}
+
+.left_side {
+  float: left;
+}
+
+.right_side {
+  float: right;
+}
+
+/* Phone */
+
+#phone{
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-105%);
+  position: relative;
+  height: 720px;
+  width: 356px;
+}
+
+#phone_hide{
+  opacity: 0.6;
+  float: right;
+  position: relative;
+  top: 50%;
+  transform-origin: center;
+  transform: translateY(-50%) translateX(190%);
+  transition: opacity .3s ease, transform .3s ease;
+}
+
+#phone_hide:hover{
+  opacity: 1;
+  transform: translateY(-50%) translateX(200%);
+}
+
+#phone_hide .arrow{
+  transition: transform 0.3s ease-out;
+  transform: rotate(180deg);
+}
+
+/* Menu */
+
+#menu {
+  margin: 15px;
+  height: 720px;
+  width: 356px;
+}
+
+#outer_menu {
+  position: relative;
+  height: 90%;
+  width: 90%;
+  padding: 5%;
+  background: var(--color-notification-button);
+  border-radius: 50px;
+}
+
+#outer_menu>p {
+  text-align: center;
+  font-size: 20px;
+  transform: skewX(-20deg);
+  color: var(--color-dark-text);
+  font-family: monospace;
+  display: block;
+}
+
+#outer_menu>p::after {
+  content: "<"
+}
+
+#outer_menu>p::before {
+  content: ">"
+}
+
+#inner_menu {
+  height: 95%;
+  width: 100%;
+  margin: 2.5% auto;
+  background: #242632;
+  border-radius: 40px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* DUMP TEXT PROPERTIES*/
+
+#overlay {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.dump_text {
+  display: block;
+  padding: 2.5%;
+  position: absolute;
+  float: right;
+  text-align: right;
+  bottom: 0px;
+  right: 0px;
+  font-size: 12px;
+}
+
+.dump_text a {
+  color: black;
+}

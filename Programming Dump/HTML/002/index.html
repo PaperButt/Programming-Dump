@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Programming Dump - 002 - HTML</title>
+  <link rel="stylesheet" href="css/root.css">
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/notification.css">
+  <link rel="stylesheet" href="css/inner_menu_content.css">
+  <script src="javascript/jquery-3.2.1.min.js" charset="utf-8"></script>
+  <script src="javascript/javascript.js" charset="utf-8"></script>
+  <script src="javascript/notification.js" charset="utf-8"></script>
+  <script src="javascript/time.js" charset="utf-8"></script>
+  <script src="javascript/boot.js" charset="utf-8"></script>
+</head>
+
+<body onload="onload()">
+
+  <!-- Overlay -->
+  <div class="really_fixed">
+    <div id="overlay">
+
+      <!-- D U M P -->
+      <p class="dump_text">
+        This is Programming Dump<br> HTML - 002<br> This programming dump has html and javascript<br>
+        <a href="paperbutt.github.io" target="_blank">paperbutt.github.io</a>
+      </p>
+
+    </div>
+  </div>
+
+  <!-- Phone -->
+  <div id="phone">
+
+    <div id="phone_hide">
+      <div class="arrow">
+        <a hidden href="#">📱</a>
+        <a href="#" onclick="hide_phone();notification_area_hidden = false;hide_notifications()">
+          <svg width="25" height="30">
+            <polygon points="20,30 10,15 20,0 10,15" style="stroke:var(--color-notification-button);stroke-width:5;"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div id="menu">
+
+      <!-- Outside of the menu -->
+      <div id="outer_menu">
+        <p> F AGG OS </p>
+
+        <!-- Inner Darker Menu -->
+        <div id="inner_menu">
+
+          <!-- Notification Area -->
+          <div id="notification_area">
+            <div id="notifications_hide">
+              <div id="notification_clock">
+                <h1 class="time"></h1>
+              </div>
+              <div id="notifications">
+
+              </div>
+              <div id="notification_arrow">
+                <div class="arrow">
+                  <a href="#" onclick="hide_notifications()">
+                <svg width="30" height="25">
+                  <polygon points="30,20 15,10 0,20 15,10" style="stroke:var(--color-notification-background);stroke-width:5;"/>
+                </svg>
+              </a>
+                </div>
+                <div class="notification_area_status">
+                  <p class="status_number">0</p>
+                  <a href="#" class="time" onclick="hide_notifications()"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Content iside the inner menu -->
+          <div id="inner_menu_content" style="color: var(--color-light-text)">
+            <div class="overlay">
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Button to Spawn a squad of notifications -->
+  <button style="padding: 5px; margin: 15px;" type="button" onclick="spawn_notification()">SPAWN THE NOTIFICATION SQUAD</button>
+
+  <!-- Your custom message and title then click so spawn -->
+  <input id="input_title" type="text" name="" placeholder="Title" value=""></input>
+  <input id="input_message" type="text" name="" placeholder="Message" value=""></input>
+  <button style="padding: 5px; margin: 15px;" type="button" onclick="toast_notification($('#input_title').val(), $('#input_message').val())">SPAWN YOUR NOTIFICATION</button>
+
+  <!-- Templates -->
+  <div hidden id="templates">
+
+    <!-- App Icon -->
+    <div id="app_icon">
+      <div class="app_icon">
+
+      </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification">
+      <div class="notification_toast">
+        <div class="notification_title">
+          <p>TITLE</p>
+        </div>
+        <div class="notification_message">
+          <p>Message</p>
+        </div>
+        <a class="notification_dismiss" href="#" onclick="notification_dismiss(this);">
+          <p class="accept_emoji" hidden>🉑</p>
+          <p class="vertical_text">大丈夫</p>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

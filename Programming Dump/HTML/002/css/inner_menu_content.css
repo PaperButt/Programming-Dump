@@ -1,0 +1,6 @@
+#inner_menu_content{
+  margin-top: 25px;
+  overflow: hidden;
+  filter: blur(0px);
+  transition: filter 0.6s ease;
+}

@@ -22,18 +22,23 @@
           <a href="#" onclick="hide_notifications()">></a>
           <p>0</p>
         </div>
-        <div class="notification_toast" onload="notification_timeout(this)">
-          <!-- <div class="left_side"> -->
+        <div id="notifications">
+          <div class="notification_toast" onload="notification_timeout(this)">
+            <!-- <div class="left_side"> -->
             <div class="notification_title">
               <p>Hey this is a Notification</p>
             </div>
             <div class="notification_message">
               <p>This is where notifications should appear.<wbr> Click on the left to hide this tab</p>
             </div>
-          <!-- </div> -->
-          <a class="notification_dismiss" href="#" onclick="notification_dismiss(this);">
-            <p>Dissmiss</p>
-          </a>
+            <!-- </div> -->
+            <a class="notification_dismiss" href="#" onclick="notification_dismiss(this);">
+              <p>Dissmiss</p>
+            </a>
+          </div>
+        </div>
+        <div id="clear">
+          <a href="#" id="clear_notifications" onclick="clear_all_notifications()">Clear All Notifications</a>
         </div>
       </div>
 
@@ -61,14 +66,14 @@
     <div id="notification">
       <div class="notification_toast">
         <!-- <div class="left_side"> -->
-          <div class="notification_title">
-            <p>Title
-              <p>
-          </div>
-          <div class="notification_message">
-            <p>Message
-              <p>
-          </div>
+        <div class="notification_title">
+          <p>Title
+            <p>
+        </div>
+        <div class="notification_message">
+          <p>Message
+            <p>
+        </div>
         <!-- </div> -->
         <a class="notification_dismiss" href="#" onclick="notification_dismiss(this);">
           <p>Dissmiss</p>
