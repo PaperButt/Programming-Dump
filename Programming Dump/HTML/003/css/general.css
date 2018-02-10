@@ -1,0 +1,54 @@
+/* Global Styles */
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: var(--font-text);
+  background: var(--color-background);
+}
+
+.really_fixed {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  pointer-events: none;
+}
+
+.left_side {
+  float: left;
+}
+
+.right_side {
+  float: right;
+}
+
+/* DUMP TEXT PROPERTIES*/
+
+#overlay {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.dump_text {
+  display: block;
+  padding: 2.5%;
+  position: absolute;
+  float: right;
+  text-align: right;
+  bottom: 0px;
+  right: 0px;
+  font-size: 12px;
+}
+
+.dump_text a {
+  color: black;
+}

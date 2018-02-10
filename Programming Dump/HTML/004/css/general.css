@@ -1,0 +1,164 @@
+/* Global Styles */
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: var(--font-text);
+  background: var(--color-background);
+}
+
+.really_fixed {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  pointer-events: none;
+}
+
+.left_side {
+  float: left;
+}
+
+.right_side {
+  float: right;
+}
+
+#back {
+  z-index: -20;
+}
+
+/* Stuff */
+
+#inventory {
+  width: 400px;
+  margin: 0;
+}
+
+.slot {
+  display: inline-table;
+  position: relative;
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+  margin: 10px 10px -10px 10px;
+}
+
+.slot:hover:not(.disabled) .slot_actions {
+  visibility: visible;
+  opacity: 0.8;
+}
+
+.slot:hover:not(.disabled) .slot_image {
+  visibility: visible;
+  opacity: 0.8;
+  border-radius: 15px 15px 0 0;
+}
+
+.slot_image {
+  border-radius: 15px;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+  background: #34343410;
+  transition: border-radius .2s ease-out;
+  position: relative;
+  /* box-shadow: #343434 0 0 1px; */
+}
+
+.slot_image .background {
+  z-index: -1;
+  opacity: .3;
+  font-weight: bolder;
+  font-family: monospace;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  pointer-events: none;
+}
+
+.slot_image .image {
+  height: 100%;
+  width: 100%;
+}
+
+.slot_actions {
+  text-align: center;
+  visibility: hidden;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity .2s ease-out;
+  display: table;
+  border-radius: 0 0 15px 15px;
+  overflow: hidden;
+  /* box-shadow: #343434 0 0 1px; */
+}
+
+.slot_actions a {
+  color: grey;
+  display: table-cell;
+  padding: 5px;
+  background: #34343410;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.slot_actions a:hover {
+  color: darkgrey;
+}
+
+/* Slot Status */
+
+.slot.available {}
+
+.slot.disabled {
+  filter: grayscale(0.9) blur(1px);
+  pointer-events: none;
+}
+
+.slot.full {}
+
+/* Debug Menu */
+
+#debug {
+  float: right;
+}
+
+#debug button {
+  margin: 5px;
+}
+
+#debug input {
+  margin: 5px;
+}
+
+/* DUMP TEXT PROPERTIES*/
+
+#overlay {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.dump_text {
+  display: block;
+  padding: 2.5%;
+  position: absolute;
+  float: right;
+  text-align: right;
+  bottom: 0px;
+  right: 0px;
+  font-size: 12px;
+}
+
+.dump_text a {
+  color: black;
+}

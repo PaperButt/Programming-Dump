@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Dump - 004 - HTML</title>
+  <link rel="stylesheet" href="css/root.css">
+  <link rel="stylesheet" href="css/general.css">
+  <script src="javascript/jquery-3.2.1.min.js" charset="utf-8"></script>
+  <script src="javascript/javascript.js" charset="utf-8"></script>
+</head>
+
+<body onload="onload()">
+
+  <!-- Overlay -->
+  <div class="really_fixed">
+    <div id="overlay">
+
+      <!-- D U M P -->
+      <p class="dump_text">
+        This is Programming Dump<br> HTML - 004<br> This programming dump has html, javascript and JSON<br>
+        <a href="paperbutt.github.io" target="_blank">paperbutt.github.io</a>
+      </p>
+
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div id="main">
+
+    <!-- Background -->
+    <div id="back" style="position: absolute; height: 100%; width: 100%">
+
+    </div>
+
+    <!-- Debug Commands -->
+    <div id="debug">
+      <button type="button" onclick="spawn_slot()">Spawn Slot</button>
+      <button type="button" onclick="spawn_item(000)">Spawn Item</button>
+      <input type="text" id="item_ID_input" size="3" placeholder="000">
+      <button type="button" onclick="spawn_item($('#item_ID_input').val())">Spawn Item with ID</button>
+    </div>
+
+    <!-- Content -->
+    <div id="inventory">
+
+    </div>
+
+    <!-- Templates -->
+    <div id="templates" hidden>
+
+      <!-- Item/Entity slot -->
+      <div id="slot">
+        <div class="slot available">
+          <div class="slot_image">
+            <div class="background">
+              <p>+</p>
+            </div>
+            <div class="image">
+
+            </div>
+          </div>
+          <div class="slot_actions">
+            <a href="#" onclick="use_item(this)">
+              <p>use</p>
+            </a>
+            <a href="#">
+              <p>transfer</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item Template -->
+      <div id="item">
+        <div class="item">
+          <div class="item_name">
+            <p></p>
+          </div>
+          <div hidden class="item_properties">
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

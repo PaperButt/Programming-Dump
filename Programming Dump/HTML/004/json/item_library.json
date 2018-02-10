@@ -1,0 +1,22 @@
+[{
+  "item_id": "000",
+  "item_properties": {
+    "item_name": "NA",
+    "item_description": "What happened?",
+    "item_image": "No item"
+  }
+},{
+  "item_id": "001",
+  "item_properties": {
+    "item_name": "Box",
+    "item_description": "Just a box fam",
+    "item_image": "Box"
+  }
+}, {
+  "item_id": "002",
+  "item_properties": {
+    "item_name": "Bottle",
+    "item_description": "An empty bottle",
+    "item_image": "Bottle"
+  }
+}]
