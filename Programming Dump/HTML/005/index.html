@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Dump - 005 - HTML</title>
+  <link rel="stylesheet" href="css/root.css">
+  <link rel="stylesheet" href="css/general.css">
+  <script src="javascript/jquery-3.2.1.min.js" charset="utf-8"></script>
+  <script src="javascript/javascript.js" charset="utf-8"></script>
+</head>
+
+<body onload="onload()">
+
+  <!-- Overlay -->
+  <div class="really_fixed">
+    <div id="overlay">
+
+      <!-- D U M P -->
+      <p class="dump_text">
+        This is Programming Dump<br> HTML - 005<br> This programming dump has html and javascript<br>
+        <a href="paperbutt.github.io" target="_blank">paperbutt.github.io</a>
+      </p>
+
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div id="main">
+
+    <!-- Background -->
+    <div id="back" style="position: absolute; height: 100%; width: 100%">
+    </div>
+
+    <!-- Debug Commands -->
+    <div id="debug">
+      <button type="button" name="debug_spawn_obj" onclick="spawn_object()">Spawn Object</button>
+    </div>
+
+    <!-- Content -->
+    <div id="content">
+      <div id="user_objects" style="border-bottom-left-radius: 15px;">
+        <div class="inner_absolute_content">
+          <h2>User Objects</h2>
+          <div class="inner_menu">
+
+          </div>
+        </div>
+      </div>
+      <div id="transfer_button_left">
+        <button type="button" name="transfer_button_left" onclick="transfer_left()"> <p> < </p> </button>
+      </div>
+      <div id="transfer_tab">
+        <div class="inner_absolute_content">
+          <h2>Transfer Tab</h2>
+          <div class="inner_menu">
+
+          </div>
+        </div>
+      </div>
+      <div id="transfer_button_right">
+        <button type="button" name="transfer_button_right" onclick="transfer_right()"> <p> > </p> </button>
+      </div>
+      <div id="environment_objects" style="border-bottom-right-radius: 15px;">
+        <div class="inner_absolute_content">
+          <h2>'Environment' Objects</h2>
+          <div class="inner_menu">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Templates -->
+    <div id="templates" hidden>
+
+      <!-- Object Template -->
+      <div id="objectum">
+        <div class="objectum">
+          <div class="left_side">
+            <h1 class="name_of_object">
+              Object
+            </h1>
+          </div>
+          <div class="right_side">
+            <button type="button" name="select" onclick="select_object(this)">select</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

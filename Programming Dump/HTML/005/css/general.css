@@ -1,0 +1,177 @@
+/* Global Styles */
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: var(--font-text);
+  background: var(--color-background);
+}
+
+.really_fixed {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  pointer-events: none;
+}
+
+/* .left_side {
+  float: left;
+}
+
+.right_side {
+  float: right;
+} */
+
+#back {
+  z-index: -20;
+}
+
+/* Stuff */
+
+#content {
+  display: table;
+  margin: 5px;
+  overflow: hidden;
+  height: 500px;
+  border-radius: 15px;
+  border: #343434 5px solid;
+}
+
+#user_objects, #transfer_button_left, #transfer_tab, #transfer_button_right, #environment_objects {
+  display: table-cell;
+  height: 100%;
+  position: relative;
+}
+
+#user_objects, #transfer_tab, #environment_objects {
+  background: #E8E9EB;
+  width: 300px;
+}
+
+#transfer_button_left, #transfer_button_right {
+  background: linear-gradient(#fb9db2, #d678ff);
+  transition: filter 0.3s ease-out;
+  height: 100%;
+}
+
+#transfer_button_left button, #transfer_button_right button {
+  /* top: 50%;
+  transform: translateY(-50%); */
+  height: 100%;
+  border: 0;
+  background: transparent;
+  display: block;
+  transition: filter 0.3s ease-out;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#transfer_button_left button:hover, #transfer_button_right button:hover {
+  cursor: pointer;
+  filter: hue-rotate(270deg);
+}
+
+#transfer_button_left p, #transfer_button_right p {
+  background: linear-gradient(#E2A0FF, #FFC1CF);
+  color: transparent;
+  -webkit-background-clip: text;
+  font-family: monospace;
+  padding: 5px;
+  font-size: 50px;
+  font-weight: bolder;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Objects */
+
+.objectum {
+  border-radius: 5px;
+  height: 50px;
+  width: 200px;
+  display: block;
+  background: var(--color-dark-text);
+  color: var(--color-light-text);
+  margin: 5px;
+  display: table;
+}
+
+.objectum .left_side, .objectum .right_side{
+  display: table-cell;
+}
+
+.objectum .left_side {
+  text-align: left;
+  padding: 5px;
+}
+
+.objectum .right_side button {
+  cursor: pointer;
+}
+
+/* inner_absolute_content */
+
+.inner_absolute_content{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.inner_absolute_content > h2{
+  background: #343434;
+  background-size: 480px;
+  color: #FFC1CF;
+  text-align: center;
+}
+
+.inner_menu{
+  overflow: scroll;
+  height: 90%;
+  width: 90%;
+  padding: 5%;
+}
+
+/* Debug Menu */
+
+#debug {
+  float: right;
+}
+
+#debug button {
+  margin: 5px;
+}
+
+#debug input {
+  margin: 5px;
+}
+
+/* DUMP TEXT PROPERTIES*/
+
+#overlay {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.dump_text {
+  display: block;
+  padding: 2.5%;
+  position: absolute;
+  float: right;
+  text-align: right;
+  bottom: 0px;
+  right: 0px;
+  font-size: 12px;
+}
+
+.dump_text a {
+  color: black;
+}

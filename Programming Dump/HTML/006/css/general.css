@@ -1,0 +1,207 @@
+/* Global Styles */
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: var(--font-text);
+  background: var(--color-background);
+}
+
+.really_fixed {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  pointer-events: none;
+}
+
+.left_side {
+  float: left;
+}
+
+.right_side {
+  float: right;
+}
+
+#back {
+  z-index: -20;
+  /* pointer-events: none; */
+}
+
+/* Stuff */
+
+/* TIM-E COUNTER */
+
+#time_counter {
+  font-family: monospace;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#time_counter p {
+  color: var(--color-light-text);
+  letter-spacing: 5px;
+  font-size: 25px;
+  margin: 10px;
+  padding: 5px;
+  border: var(--color-light-text) 2px solid;
+  display: inline-block;
+  transition: all 0.3s ease-out;
+  overflow: hidden;
+}
+
+#time_counter a p {
+  max-width: 75px;
+}
+
+#time_counter a:hover p {
+  border-radius: 0 10px 10px 0;
+  max-width: 150px;
+}
+
+/* general tabs */
+
+.general_tab {
+  margin: 10px;
+  padding: 5px;
+  outline: var(--color-light-text) 2px solid;
+  display: inline-table;
+  color: var(--color-light-text);
+  min-width: 100px;
+  max-width: 300px;
+}
+
+.general_tab h2:first-of-type {
+  text-align: left;
+}
+
+.general_tab h3 {
+  margin: 10px 0 0 0;
+}
+
+.inner_tab_table {
+  display: table;
+  width: 100%;
+}
+
+.inner_tab_table_collumn {
+  display: table-column;
+  width: 50%;
+}
+
+.inner_tab_table_collumn:nth-of-type(2n-1) .inner_tab_table_cell p::after {
+  content: ":";
+  display: inline;
+}
+
+.inner_tab_table_collumn:nth-of-type(2n-1) .inner_tab_table_cell p {
+  text-align: left;
+  padding: 0 0 0 5px;
+}
+
+.inner_tab_table_collumn:nth-of-type(2n) .inner_tab_table_cell p::before {
+  content: "";
+  display: inline;
+}
+
+.inner_tab_table_collumn:nth-of-type(2n) .inner_tab_table_cell p {
+  text-align: right;
+  padding: 0 5px 0 0;
+}
+
+.inner_tab_table_collumn {
+  display: table-cell;
+  text-align: center;
+}
+
+.inner_tab_table_collumn .inner_tab_table_cell a {
+  margin: 5px;
+  border: var(--color-light-text) 2px solid;
+  display: block;
+  color: var(--color-light-text);
+}
+
+.inner_tab_table_collumn .inner_tab_table_cell a:hover {
+  color: var(--color-dark-text);
+  background: var(--color-light-text);
+}
+
+/* Works */
+
+.work {
+  margin: 5px;
+  margin-top: 20px;
+  border: var(--color-light-text) 2px solid;
+  display: block;
+  color: var(--color-light-text);
+}
+
+.work .cancel_work {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+}
+
+.work a {
+  color: var(--color-light-text);
+}
+
+.work h4 {
+  margin: 10px 10px 0 10px;
+  display: block;
+  color: var(--color-light-text);
+}
+
+.work progress {
+  background-color: white;
+  width: 90%;
+  margin: 5%;
+  border: none;
+}
+
+/* Debug Menu */
+
+#debug {
+  float: right;
+}
+
+#debug button {
+  margin: 5px;
+}
+
+#debug input {
+  margin: 5px;
+}
+
+/* DUMP TEXT PROPERTIES*/
+
+#overlay {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.dump_text {
+  display: block;
+  padding: 2.5%;
+  position: absolute;
+  float: right;
+  text-align: right;
+  bottom: 0px;
+  right: 0px;
+  font-size: 12px;
+}
+
+.dump_text a {
+  color: black;
+}

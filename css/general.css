@@ -41,6 +41,12 @@ body {
   color: var(--color-notification-text);
 }
 
+#header h2 a {
+  color: var(--color-notification-text);
+  text-decoration: none;
+  display: block;
+}
+
 /* main */
 
 #main {}

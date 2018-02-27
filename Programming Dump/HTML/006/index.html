@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Dump - 005 - HTML</title>
+  <link rel="stylesheet" href="css/root.css">
+  <link rel="stylesheet" href="css/general.css">
+  <script src="javascript/jquery-3.2.1.min.js" charset="utf-8"></script>
+  <script src="javascript/javascript.js" charset="utf-8"></script>
+</head>
+
+<body onload="onload()">
+
+  <!-- Overlay -->
+  <div class="really_fixed">
+    <div id="overlay">
+
+      <!-- D U M P -->
+      <p class="dump_text">
+        This is Programming Dump<br> HTML - 005<br> This programming dump has html and javascript<br>
+        <a href="paperbutt.github.io" target="_blank">paperbutt.github.io</a>
+      </p>
+
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div id="main">
+
+    <!-- Background -->
+    <div id="back" style="position: absolute; height: 100%; width: 100%">
+    </div>
+
+    <!-- Debug Commands -->
+    <div id="debug">
+    </div>
+
+    <!-- Content -->
+    <div id="content">
+
+      <!-- Time Counter -->
+      <div id="time_counter">
+        <p>TIM-E: <span id="time_counter_number">0</span></p>
+        <a href="#" onclick="count_time()">
+          <p>Next>></p>
+        </a>
+      </div>
+
+
+      <div id="menu_tab" class="general_tab" style="width: 200px;">
+        <h2>Menu</h2>
+        <div class="inner_tab_table">
+          <div class="inner_tab_table_collumn">
+            <div class="inner_tab_table_cell">
+              <a href="#" onclick="save()">Save State</a>
+            </div>
+            <div class="inner_tab_table_cell">
+              <h4>Everytime time passes the state autosaves.</h4>
+            </div>
+            <div class="inner_tab_table_cell">
+              <a href="#" onclick="reset_save()">Reset Save</a>
+            </div>
+            <div class="inner_tab_table_cell">
+              <h4>By resetting state you lose all the progress</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="user_tab" class="general_tab" style="width: 200px;">
+        <h2>User Tab</h2>
+        <h3>Resources</h3>
+        <div class="inner_tab_table">
+          <div class="inner_tab_table_collumn">
+            <div class="inner_tab_table_cell">
+              <p>Gold</p>
+            </div>
+            <div class="inner_tab_table_cell">
+              <p>Vibridium</p>
+            </div>
+          </div>
+          <div class="inner_tab_table_collumn">
+            <div class="inner_tab_table_cell">
+              <p>0</p>
+            </div>
+            <div class="inner_tab_table_cell">
+              <p>0</p>
+            </div>
+          </div>
+        </div>
+        <h3>Activities</h3>
+        <div class="inner_tab_table">
+          <div class="inner_tab_table_collumn">
+            <div class="inner_tab_table_cell">
+              <a href="#" onclick="start_activity(this)">
+                <span>Scavenge</span>
+              <h6>Energy Use: 10 | Time Use: 2</h6>
+              </a>
+            </div>
+            <div class="inner_tab_table_cell">
+              <a href="#" onclick="start_activity(this)">
+                <span>Rest</span>
+              <h6>Energy Gain: 5 | Time Use: 1</h6>
+              </a>
+            </div>
+          </div>
+        </div>
+        <h3>Stats</h3>
+        <div class="inner_tab_table">
+          <div class="inner_tab_table_collumn">
+            <div class="inner_tab_table_cell">
+              <p>Health</p>
+            </div>
+            <div class="inner_tab_table_cell">
+              <p>Energy</p>
+            </div>
+          </div>
+          <div class="inner_tab_table_collumn">
+            <div class="inner_tab_table_cell">
+              <p id="user_health">0/100</p>
+            </div>
+            <div class="inner_tab_table_cell">
+              <p id="user_energy">0/20</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="world_tab" class="general_tab" style="width: 200px;">
+        <h2>World Tab</h2>
+      </div>
+      <div id="work_tab" class="general_tab" style="width: 200px;">
+        <h2>Work Tab</h2>
+      </div>
+    </div>
+
+    <!-- Templates -->
+    <div id="templates" hidden>
+
+      <!-- Object Template -->
+      <div id="template_work">
+        <div class="work">
+          <div style="position: relative">
+            <div class="cancel_work">
+              <a href="#" onclick="cancel_work(this)">[x]</a>
+            </div>
+          </div>
+          <h4 class="work_title">N/A</h4>
+          <div class="work_details">
+            <progress value="0" max="100">0%</progress>
+          </div>
+          <div class="work_stats" hidden>
+            <p class="time_left">0</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
