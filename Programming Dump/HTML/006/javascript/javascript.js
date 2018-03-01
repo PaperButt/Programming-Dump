@@ -6,15 +6,27 @@ var health;
 var max_health = 100;
 var resources;
 
-var activities = JSON.parse(
-  '[{"activity_id":"000","activity_name":"Scavenge","energy_use":"10","time_used":"2","max_health_loss":"10","max_gold_gain":"10","max_vibridium_gain":"2"},{"activity_id":"001","activity_name":"Rest","energy_use":"-5","time_used":"2","max_health_loss":"-15"}]'
-);
+var activities = [];
 
 function onload() {
+  get_that_json();
   load();
   set_energy(energy);
   set_health(health);
   check_time();
+}
+
+// Load the JSONs
+
+function get_that_json() {
+  $.getJSON("json/activities.json", function(data) {
+    $.each(data, function(key, val) {
+      activities.push(key, val);
+    });
+
+    activities = Object.values(data);
+
+  });
 }
 
 // Load and Save System using the browser localStorage
@@ -54,7 +66,7 @@ function count_time() {
   $("#time_counter_number").html(time);
   work_evolve_time();
   use_energy(-1);
-  lose_health(10);
+  lose_health(3);
 }
 
 function check_time() {
@@ -105,31 +117,46 @@ function check_stats() {
 
 // Activities functions
 
+var copyofactivities = [];
+
 function start_activity(activity) {
   var activity_html = $(activity).find("span").html();
-  var activity_found = activities.find(function(x) {
-    return x.activity_name == activity_html;
+  // var copyofactivities = activities.slice(0);
+  copyofactivities = JSON.parse(JSON.stringify(activities));
+  var activity_found = copyofactivities.find(function(x) {
+    return x.activity.activity_name == activity_html;
   });
-  use_energy(activity_found.energy_use);
   add_work(activity_found);
 }
 
+function finish_activity(activity) {
+  var health_lost = Math.floor(Math.random() * (activity.activity.max_health_loss - 0));
+  var energy_used = Math.floor(Math.random() * (activity.activity.energy_use - 5) + 5);
+  var energy_gained = activity.activity.energy_gain;
+  var health_healed = activity.activity.health_gain;
+  lose_health(-health_healed + health_lost);
+  use_energy(-energy_gained + energy_used);
+}
+
 // Work System
+
+var active_activities = [];
 
 function check_work() {
   var no_work_html = "<p style='padding: 10px' id='not_working'>Not working</p>";
   if ($("#work_tab .work").length == 0) {
     $("#work_tab").append(no_work_html);
-  }else{
+  } else {
     $("#work_tab #not_working").remove();
   }
 }
 
 function add_work(activity) {
   var work = $("#templates #template_work .work").clone();
-  work.find(".work_title").html(activity.activity_name);
-  work.find(".time_left").html(activity.time_used);
+  work.find(".work_title").html(activity.activity.activity_name);
+  work.find(".time_left").html(activity.activity.time_used);
   $("#work_tab").append(work);
+  active_activities.push(activity);
   check_work();
 }
 
@@ -138,5 +165,17 @@ function cancel_work(work) {
 }
 
 function work_evolve_time() {
-  
+  var activity = active_activities[0];
+  if (activity == undefined) {
+    return "no work";
+  }
+  if (activity.activity.time_used < 1) {
+    finish_activity(activity);
+    $("#work_tab .work")[0].remove();
+    active_activities.splice(0, 1);
+  } else {
+    $("#work_tab .work .work_details progress")[0].value = (parseInt($("#work_tab .work .time_left").html()) - activity.activity.time_used + 1) * 100 / parseInt($("#work_tab .work .time_left").html());
+    activity.activity.time_used--;
+  }
+  check_work();
 }

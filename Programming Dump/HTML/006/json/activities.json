@@ -1,0 +1,28 @@
+[
+  {
+    "activity": {
+      "activity_id": "000",
+      "activity_name": "Scavenge",
+      "energy_use": 10,
+      "time_used": 4,
+      "max_health_loss": 10,
+      "max_gold_gain": 10,
+      "max_vibridium_gain": 2,
+      "health_gain": 0,
+      "energy_gain": 0
+    }
+  },
+  {
+    "activity": {
+      "activity_id": "001",
+      "activity_name": "Rest",
+      "energy_use": 0,
+      "time_used": 2,
+      "max_health_loss": -15,
+      "max_gold_gain": 0,
+      "max_vibridium_gain": 0,
+      "health_gain": 10,
+      "energy_gain": 5
+    }
+  }
+]
